@@ -49,8 +49,6 @@ ActiveRecord::Schema.define(:version => 20120517203611) do
     t.string   "event_type"
   end
 
-  add_index "growls", ["created_at"], :name => "index_growls_on_created_at"
-
   create_table "meta_data", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -59,16 +57,6 @@ ActiveRecord::Schema.define(:version => 20120517203611) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
-
-  create_table "regrowls", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "growl_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "regrowls", ["created_at"], :name => "index_regrowls_on_created_at"
-  add_index "regrowls", ["user_id", "growl_id"], :name => "index_regrowls_on_user_id_and_growl_id", :unique => true
 
   create_table "subscriptions", :force => true do |t|
     t.integer  "user_id"

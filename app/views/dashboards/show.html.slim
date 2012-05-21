@@ -23,6 +23,9 @@ javascript:
   authentication_token = "#{current_user.authentication_token}"
 coffee:
   jQuery ->
+    $(document).ready ->
+      $("#buttonForModal").click ->
+        $("myModal").reveal()
     $("#message").click ->
       $("#imageFormTab").hide()
       $("#linkFormTab").hide()

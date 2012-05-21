@@ -25,3 +25,13 @@
       = render "shared/get_auth_token"
     hr
     = link_to "Back", :back
+
+coffee:
+  jQuery ->
+    $(document).ready ->
+      $("#showToken").click ->
+        $("#authToken").reveal
+          animation: "fadeAndPop"
+          animationspeed: 300
+          closeOnBackgroundClick: true
+          dismissModalClass: "close-reveal-modal"
