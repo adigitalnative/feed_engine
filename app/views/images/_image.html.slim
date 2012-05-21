@@ -6,5 +6,8 @@
   .ten.columns
     = image.comment
     br
-    .comments= image_tag image.photo(:medium)
-= render partial: "shared/growl_footer", locals: { growl: image}
+    .comments
+      = image_tag image.photo(:medium)
+      br
+      = link_to "view larger", image.photo(:medium), rel: "lightbox"
+= render partial: "shared/growl_footer", locals: { growl: image }

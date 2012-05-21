@@ -1,3 +1,5 @@
 = growl.comment
 br
-.comments= image_tag growl.photo(:medium)
+.comments
+  = link_to growl.photo(:medium), rel: "lightbox"
+  = image_tag growl.photo(:medium)
