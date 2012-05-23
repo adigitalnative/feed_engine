@@ -24,6 +24,14 @@ describe User do
       end
     end
   end
+
+  context "#slug" do
+    it "recases the display name" do
+      myuser = User.new(email: "foo@mail.com", password: "hungry", display_name: "CamelCasedName")
+      myuser.save
+      myuser.slug.should == "camelcasedname"
+    end
+  end
 end
 # == Schema Information
 #
