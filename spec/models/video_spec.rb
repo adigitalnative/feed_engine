@@ -55,4 +55,11 @@ describe Video do
       video.youtube_urlify.should == "Cgovv8jWETM"
     end
   end
+
+  describe "#icon" do
+    it "returns the icon we chose" do
+      video = Video.new
+      video.icon.should == "glyphicons/glyphicons_008_film.png"
+    end
+  end
 end
